@@ -1,0 +1,40 @@
+# Valet on Railway. Save this file and the page updates by itself; a mistake is reported and the last good version keeps running.
+# Every option: https://github.com/askvalet/valet/blob/master/docs/configuration.md
+# Sign-in settings (auth, allowedHosts) are read once: restart the service after changing them.
+
+# Sign-in is ON: the owner account "admin" is created on first boot from the VALET_ADMIN_PASSWORD variable.
+auth: { mode: local, trustNetwork: false }
+
+# Names Valet answers to. *.up.railway.app covers your Railway domain; healthcheck.railway.app is Railway's health probe.
+# Using a custom domain? Add it here, e.g. [home.example.com, "*.up.railway.app", healthcheck.railway.app]
+allowedHosts: ["*.up.railway.app", healthcheck.railway.app]
+
+title: Home
+# greeting: Sam                   # "Sam's homelab"
+welcome: true                     # the getting-started card. Delete this line when you're done with it.
+
+# The assistant: any OpenAI-compatible server (Ollama, OpenRouter, OpenAI...) or Anthropic. Keys go in Railway
+# variables and are referenced as ${NAME}, e.g.:
+# assistant:
+#   provider: openai-compatible
+#   baseURL: https://openrouter.ai/api/v1
+#   model: openai/gpt-4o-mini
+#   apiKey: "${OPENROUTER_API_KEY}"
+
+integrations:
+  news:
+    type: hackernews
+    limit: 6
+  # Up/down for anything with a web page:
+  # services:
+  #   type: http
+  #   targets:
+  #     - { name: Router, url: https://example.com }
+
+links:
+  Start:
+    - { name: Valet docs, url: https://github.com/askvalet/valet/blob/master/docs/configuration.md }
+
+layout:
+  - title: Start
+    widgets: [links.start, news.stories]

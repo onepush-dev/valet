@@ -1,6 +1,6 @@
 # Valet — AI-native homelab homepage and dashboard. Deploy on Railway with one click.
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/PLACEHOLDER)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/Qb2-7b)
 
 One-click Railway packaging of [Valet](https://github.com/askvalet/valet) (MIT): a homepage for your homelab with
 widgets for Plex, Home Assistant, Sonarr/Radarr, Immich, Pi-hole, Uptime Kuma and more, plus a built-in assistant that
